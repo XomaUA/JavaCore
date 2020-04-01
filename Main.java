@@ -1,70 +1,57 @@
 package com.company;
-import java.util.Scanner;
+class Dog {
 
- enum Http {
-    ACCEPETED_202, FOUND_302, PERMANENT_REDIRECT_308, BAD_REQUEST_400, NOT_FOUND_404, SERVICE_UNAVAILABLE_503, NOT_EXTENDED_510;
+    public String name;
+    public String breed;
+    public int age;
+
+    public Dog (String name, String breed, int age){
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+    }
+    public int getAge(){
+        return age;
+    }
+    public String getName(){
+        return name;
+    }
+    public String getBreed(){
+        return breed;
+    }
+    public void setName(String name) {this.name = name;}
+    public void setBreed(String breed) {this.breed = breed;}
+    public void setAge(int age) {this.age = age;}
 }
 public class Main {
-
+    enum breed {
+        BEAGLE, BULLDOG, TERRIER
+    }
 
     public static void main(String[] args) {
-        Scanner valera = new Scanner(System.in);
-        System.out.println("Input your first number: ");
-        float x1 = valera.nextFloat();
-        System.out.println("Input your second number: ");
-        float x2 = valera.nextFloat();
-        System.out.println("Input your third number: ");
-        float x3 = valera.nextFloat();
-        if (x1 >= -5 && x1 <= 5) {
-            System.out.println("The number one is WITHIN the range");
-        } else {
-            System.out.println("The number one is OUT of the range");
-        }
-        if (x2 >= -5 && x2 <= 5) {
-            System.out.println("The number two is WITHIN the range");
-        } else {
-            System.out.println("The number two is OUT of the range");
-        }
-        if (x3 >= -5 && x3 <= 5) {
-            System.out.println("The number three is WITHIN the range");
-        } else {
-            System.out.println("The number three is OUT of the range");
-        }
-        System.out.println("PLEASE CONTINUE ↓↓↓↓↓↓\nInput your first integer: ");
-        int x4 = valera.nextInt();
-        System.out.println("Input your second integer: ");
-        int x5 = valera.nextInt();
-        System.out.println("Input your third integer: ");
-        int x6 = valera.nextInt();
-        if (x4 > x5 && x4 > x6) {
-            System.out.println("First integer is the greatest!\n");
-        }
-        if (x5 > x4 && x5 > x6) {
-            System.out.println("Second integer is the greatest!\n");
-        }
-        if (x6 > x5 && x6 > x4) {
-            System.out.println("Third integer is the greatest!\n");
-        }
-       Http H1 = Http.ACCEPETED_202;
-       Http H2 = Http.FOUND_302;
-       Http H3 = Http.PERMANENT_REDIRECT_308;
-       Http H4 = Http.BAD_REQUEST_400;
-       Http H5 = Http.NOT_FOUND_404;
-       Http H6 = Http.SERVICE_UNAVAILABLE_503;
-       Http H7 = Http.NOT_EXTENDED_510;
+        breed br1 = breed.BEAGLE;
+        breed br2 = breed.BULLDOG;
+        breed br3 = breed.TERRIER;
 
-       System.out.println("HTTP Codes to be presented↓↓↓\n");
-       System.out.println(H1);
-       System.out.println(H2);
-       System.out.println(H3);
-       System.out.println(H4);
-       System.out.println(H5);
-       System.out.println(H6);
-       System.out.println(H7);
+	Dog dog1 = new Dog("Bobik", "BEAGLE", 12);
+	Dog dog2 = new Dog("Rex", "BULLDOG", 5);
+	Dog dog3 = new Dog("Valera", "TERRIER", 6);
 
+	public boolean equals(Object obj) {
+	    if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+        Dog other = (Dog) obj;
+        if (this.age != other.getAge()) return false;
+        if (this.breed == null) {
+            if (other.breed != null) return false;
+                } else if (!this.breed.equals(other.getBreed())) return false;
+            return true;
+        if (this.name == null) {
+            if (other.name != null) return false;
+                } else if (!this.name.equals(other.getName())) return false;
+            return true;
+        }
     }
 }
-
-
-
 
