@@ -1,35 +1,44 @@
 package com.company;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("What is your price for the country #1?");
-        int amount1 = Integer.parseInt(br.readLine());
 
-        System.out.println("What is your price for the country #2?");
-        int amount2 = Integer.parseInt(br.readLine());
-
-        System.out.println("What is your price for the country #3?");
-        int amount3 = Integer.parseInt(br.readLine());
-
-        System.out.println("How long for the country #1?");
-        int amount4 = Integer.parseInt(br.readLine());
-
-        System.out.println("How long for the country #2?");
-        int amount5 = Integer.parseInt(br.readLine());
-
-        System.out.println("How long for the country #3?");
-        int amount6 = Integer.parseInt(br.readLine());
-        int Total1 = amount1 * amount4;
-        int Total2 = amount2 * amount5;
-        int Total3 = amount3 * amount6;
-        int TotalTotal = Total1 * Total2 * Total3;
-        System.out.println("Cost #1 is " + Total1);
-        System.out.println("Cost #2 is " + Total2);
-        System.out.println("Cost #3 is " + Total3);
-        System.out.println("The total amount for all calls from 3 countries: " + TotalTotal);
-
+    public static void main(String[] args) {
+	int[] arr = {2, 5, 65, 4, 12, -7, 96, -63, 33, 5};
+	int max = arr[0];
+	int imax = 0;
+	int i = 0;
+	while ( i < arr.length){
+	    if (arr[i] > max) {
+	        max = arr[i];
+	        imax = i;
+        }
+	    i++;
     }
+	System.out.print("Maximum number = " + max);
+	System.out.println(" is in " + (imax + 1) +  " place!");
+
+	int sum = 0;
+	for (int h = 0; h < arr.length; h++)  {
+	if (arr[h] > 0)	{sum += arr[h]; }}
+	System.out.println("Sum of positive numbers in array  = " + sum);
+
+
+		int product = 0;
+		for (int g = 0; g < arr.length; g++) {
+			if (arr[g] < 0) {product += arr[g];}}
+		System.out.println("Sum of negative numbers in array = " + product);
+
+
+		int amount = 0;
+		for (int a : arr) {
+			if (a > 0) { amount++; }
+		}
+		System.out.println("Amount of positive numbers = " + amount);
+
+		int amountMinus = 0;
+		for (int a : arr) {
+			if (a < 0) { amountMinus++; }
+		}
+		System.out.println("Amount of negative numbers = " + amountMinus);
+	}
 }
